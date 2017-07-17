@@ -1,20 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myQuiz">
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="dist/css/main.css">
+   <title></title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="dist/css/main.css">
 </head>
 <body>
-      <div id="myQuiz">
-         <h1>Test your knowledge: <strong>Javascript</strong></h1>
-         <div class="progress"></div>
-         <div class="intro">
-         	<h2>Welcome</h2>
-         	<p>Please click begin to test your knowledge about Javascript</p>
-         	<p>Begin</p>
+      <div id="myQuiz" ng-controller="quizController">
+         <h1>Test your knowledge: <span>Javascript</span></h1>
+         
+         <div class="progress">
+            <div ng-repeat="myQuestion in myQuestions"
+                class="
+                {{ ($index === activeQuestion) ? 'on' : 'off'  }}
+                {{ (myQuestion.questionState === 'answered') ? 'answered' : 'unanswered'  }}
+                 "
+               ng-class="{'green': myQuestion.correctness === 'correct',
+                          'red': myQuestion.correctness === 'incorrect' }
+                ">   
+                 
+            </div>
+                 
+            
          </div>
-         <div class="question"></div>
-         <div class="results"></div>
-      </div>
+
+         <div class="intro {{ (activeQuestion > -1 ? 'inactive' : 'active') }}">
+            <h2>Welcome</h2>
+            <p>Please click begin to test your knowledge about Javascript</p>
+            <p class="btn" ng-click="activeQuestion = 0">Begin</p>
+         </div>
+
+         <div class="question 
+         {{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered'  }}
+         {{ $index === activeQuestion ? 'active' : 'inactive'  }}"
+         
+          ng-repeat="myQuestion in myQuestions">
+              <p class="txt">{{myQuestion.question}}</p>
+              <p class="ans"
+               ng-class="{ selected:isSelected($parent.$index,$index), 
+                           correct:isCorrect($parent.$index,$index)
+               }"
+               ng-click="selectAnswer($parent.$index,$index)" 
+               ng-repeat="Answer in myQuestions[$index].answers">{{Answer.text}}</p>
+             
+              <div class="feedback">
+                 <p ng-show="myQuestion.correctness === 'correct'">You are <strong>correct !</strong></p>
+                 <p ng-show="myQuestion.correctness === 'incorrect'">Sorry, wrong answer</strong></p>
+                 <p>{{ myQuestion.feedback }}</p>
+                 <div class="btn" ng-click="nextQuestion()">Continue</div>
+              </div><!--feedback-->
+         </div><!--question-->
+         <div class="results">
+            <h3>Results</h3>
+            <p>You scored %X by correctly answering 
+               X of the total X questions
+            </p>
+            <p>Use the links bellow to chalenge your friends</p>
+            <div class="share">
+                 <a href="#"><img src="dist/images/mail.png"  height="40" width="55"/></a>
+                 <a href="#"><img src="dist/images/tweeter.png" class="tweeter"  height="35" width="55"/></a>
+            </div><!--share-->
+         </div><!--results-->
+      </div><!--myQuiz-->
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+       <script src="dist/scripts/main.js"></script>
 </body>
 </html>

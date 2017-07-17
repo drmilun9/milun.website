@@ -14,7 +14,6 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload');
    // del = require('del');
@@ -32,8 +31,8 @@ gulp.task('sass', function() {
     //.pipe(gulp.dest('src/css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
-    //.pipe(gulp.dest('src/css'));
-    .pipe(notify({ message: 'Sass task complete' }));
+    .pipe(gulp.dest('dist/css/error'));
+    
 });
 
 
@@ -47,16 +46,14 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist/scripts'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/scripts'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 // Images
 gulp.task('images', function() {
   return gulp.src('src/images/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe(notify({ message: 'Images task complete' }));
+    .pipe(gulp.dest('dist/images'));
 });
 
 // Clean

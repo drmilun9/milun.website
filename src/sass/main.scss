@@ -1,5 +1,6 @@
 $white: #fff;
 $black: #000;
+$gold: #efbe5e;
 
 
 #myQuiz {
@@ -9,4 +10,273 @@ $black: #000;
 	overflow: hidden;
 	color: $white;
 	background-color: $black;
-}   
+	   h1{
+	   	font-weight: 100;
+	   	font-size: 2em;
+	   	text-transform:uppercase;
+	   	margin:0px;
+	   	position:absolute;
+	   	top:25px;
+	   	left:36px;
+
+	   	   span{
+	   	   	 display: block;
+	   	   	 font-weight: 900;
+	   	   	 font-size: 2em;
+	   	   	 line-height: 65px;
+	   	   }
+	   }
+
+	   h2{
+	   	font-size: 3em; 
+	   	margin: 0px;
+	   	font-weight: 100;
+	   }
+
+	   h2{
+	   	font-size: 2.4em; 
+	   	margin: 0px;
+	   	font-weight: 100;
+	   }
+
+	   p {
+         margin:0px 0px 14px 0px; 
+	   }
+
+	   .btn{
+	   	display:inline-block;
+	   	cursor: pointer;
+	   	background-color:orange;
+	   	color: #fff;
+	   	text-decoration: none;
+	   	padding: 5px 15px;
+	   	-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	   }
+        
+        /* progress bar  */
+        .progress{
+        	position:absolute;
+        	top:160px;
+        	left:40px;
+        	width:550px;
+        	
+        	 
+              
+                      div.off{
+
+                      position:relative;
+		               display: inline-block;
+		               width:30px;
+		               height: 30px;
+		               margin-right:30px;
+		               border-radius:50%;
+		               background-color: rgba(255, 255, 255,.2);
+		               //background-color:green;
+		               transition: background-color 1s;
+                        }
+
+                         div.on{
+		               position:relative;
+		               display: inline-block;
+		               width:30px;
+		               height: 30px;
+		               margin-right:30px;
+		               border-radius:50%;
+		               //background-color: rgba(255, 255, 255,.2);
+		               background-color:yellow;
+		               transition: background-color 1s;
+		               } 
+
+                
+
+               
+		               div.green{
+		               position:relative;
+		               display: inline-block;
+		               width:30px;
+		               height: 30px;
+		               margin-right:30px;
+		               border-radius:50%;
+		               //background-color: rgba(255, 255, 255,.2);
+		               background-color:green;
+		               transition: background-color 1s;
+		               }
+		               
+
+		               div.red{
+		               position:relative;
+		               display: inline-block;
+		               width:30px;
+		               height: 30px;
+		               margin-right:30px;
+		               border-radius:50%;
+		               //background-color: rgba(255, 255, 255,.2);
+		               background-color:red;
+		               transition: background-color 1s;
+		               } 
+
+		           
+        	   
+        } 
+
+
+        /* Intro */  
+        
+        .intro{
+		   	  position:absolute;
+		   	  top: 225px;
+		   	  right:100px;
+		   	  width:550px;
+
+		   	  p{
+		   	     margin:0px 0px 40px 0px;     	
+		   	  }
+        }
+
+
+        /* questions */
+
+        .question{
+        	position:absolute;
+        	width: 550px;
+        	top:225px;
+        	right:660px;
+
+        	.txt{
+        		font-size: 1.6em;
+        		margin:0px 0px 20px 0px;
+        	}
+
+        	.ans{
+        		display: inline-block;
+        		font-size: 1.1em;
+        		width:225px;
+        		border:2px solid rgba(238,189,102,.4);
+        		-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				border-radius: 6px;
+				padding:10px;
+				margin:0px 15px 15px 0px;
+				position:relative;
+
+
+        	}
+        }
+}    
+
+
+#myQuiz .question .ans.selected{
+	border-color:#be4b16;
+}
+
+#myQuiz .question .ans.correct{
+	border-color: green;
+}
+
+
+#myQuiz .question .ans::after{
+	content:""; 
+	display:block;
+	width:20px;
+	height:20px;
+	background: no-repeat 0 0;
+	background-size:20px 20px;
+	position:absolute;
+	top:5px;
+	right:5px; 
+}
+
+#myQuiz .question .ans.selected::after{
+	background: url(../images/incorrect.png);
+}
+
+#myQuiz .question .ans.correct::after{
+	background: url(../images/correct.png);
+}
+
+
+#myQuiz .question.unanswered .ans {
+	cursor:pointer;
+}
+
+#myQuiz .question.unanswered .ans:hover {
+	background-color: rgba(230,109,102,.2);
+}
+
+#myQuiz .question.answered .ans {
+	cursor:default;
+}
+
+
+#myQuiz {
+	/* feedback */
+	.feedback{
+		color:#efbe5e;
+		margin-top: 50px;
+		transition: opacity 1.5s, margin-top 1.5s;
+		visibility: hidden;
+		opacity: 0;
+		
+		strong{
+			color:#fff;
+		} 
+
+		.btn{
+			margin-top: 5px;
+		}
+	}
+}
+
+
+#myQuiz .answered .feedback{
+	
+	visibility:visible;
+    opacity: 1;
+    margin-top:10px;  
+}
+
+/* results */
+#myQuiz .results{
+	position:absolute;
+	top:225px;
+	left:660px;
+	width:550px;
+
+	.share{ 
+		margin-top: 40px;
+
+        .tweeter{ 
+        	
+        margin-left: 20px; 
+		-webkit-border-radius: 16px;
+	    -moz-border-radius: 16px;
+	     border-radius: 16px;
+	    }
+	}
+}
+
+
+#myQuiz .active, #myQuiz .inactive{
+	transition:right 1.5s ease-in-out;
+
+}
+
+
+#myQuiz .active{
+
+	right:40px;
+}
+
+#myQuiz .intro.inactive, #myQuiz .inactive.answered{
+	right:-1350px;
+} 
+
+/*
+#myQuiz .inactive.answered{
+	left:-1350px;
+}
+*/
+
+            
