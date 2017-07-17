@@ -50,16 +50,15 @@
                  <div class="btn" ng-click="nextQuestion()">Continue</div>
               </div><!--feedback-->
          </div><!--question-->
-         <div class="results">
+         <div class="results 
+          {{totalQuestions === activeQuestion ? 'active': 'inactive'}}
+         ">
             <h3>Results</h3>
-            <p>You scored %X by correctly answering 
-               X of the total X questions
+            <p>You scored {{percentage}}% by correctly answering 
+               {{score}} of the total {{totalQuestions}} questions
             </p>
-            <p>Use the links bellow to chalenge your friends</p>
-            <div class="share">
-                 <a href="#"><img src="dist/images/mail.png"  height="40" width="55"/></a>
-                 <a href="#"><img src="dist/images/tweeter.png" class="tweeter"  height="35" width="55"/></a>
-            </div><!--share-->
+            <h3>{{message}}</h3>
+            
          </div><!--results-->
       </div><!--myQuiz-->
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>

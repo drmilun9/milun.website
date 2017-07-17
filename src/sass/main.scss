@@ -241,13 +241,13 @@ $gold: #efbe5e;
 #myQuiz .results{
 	position:absolute;
 	top:225px;
-	left:660px;
+	right:660px;
 	width:550px;
 
 	.share{ 
 		margin-top: 40px;
 
-        .tweeter{ 
+        .twitter{ 
         	
         margin-left: 20px; 
 		-webkit-border-radius: 16px;
@@ -279,4 +279,89 @@ $gold: #efbe5e;
 }
 */
 
+/*
+#myQuiz .results.active{
+	right:40px;
+}  
+*/
+
+@media screen and ( max-width:650px ){
+	body{
+		padding:0;
+		margin:0;
+
+		#myQuiz{
+			width: 320px;
+
+			.progress{
+				width: 300px;
+				top:110px;
+				left:35px;
+
+				div{
+					width:25px;
+					height:25px;
+					margin-right:20px;
+				}
+			}
+
+			.intro{
+				width:300px;
+				top:200px;
+				right:320px;
+			}
+
+			.question{
+				width:300px;
+				top:200px;
+				right:320px;
+
+				   .txt{
+				   	  font-size: 1.4em;
+				   	  margin-bottom:15px;
+				   	}
+				   .ans{
+				   	  font-size:1em;
+				   	  padding:5px 10px;
+				   	  margin-bottom:10px;
+				   }	
+			}
+
+			 .results{
+			 	width:260px;
+			 	top:150px;
+			 	right:320px;
+			 }
+             
+             .active{
+             	right:15px;
+             }
+             
+			 .intro.inactive, .inactive.answered{
+				right:-640px;
+			} 
+
+			h1{
+				width: 300px;
+				font-size: 1.3em;
+				top:25px;
+				left:25px;
+			
+                span{
+                	line-height: 43px;
+                }  
+			}
             
+            h2{
+            	margin:0;
+            }
+
+            h3{
+            	font-size: 3.2em;
+            	margin-bottom: 15px;
+            }
+
+		}
+	}
+}
+

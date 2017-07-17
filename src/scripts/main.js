@@ -36,10 +36,16 @@
             
              $scope.myQuestions[qIndex].questionState ="answered";
 
+           };
+
+
+           $scope.percentage = (($scope.score / $scope.totalQuestions) *100).toFixed(2); 
+           if($scope.percentage >= 50){
+             $scope.message = "Congratulations, you know Javascript very well!";
+           }else{
+             $scope.message = "Sorry, but you might need to learn more about javascript";
            }
-
-
-           $scope.percentage = ($scope.score / $scope.totalQuestions) *100; 
+                 
         }
 
 
@@ -55,5 +61,7 @@
       $scope.nextQuestion = function(){
          return $scope.activeQuestion += 1;
       }
+
+
    }])
 })();
