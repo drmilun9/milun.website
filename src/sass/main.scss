@@ -3,13 +3,21 @@ $black: #000;
 $gold: #efbe5e;
 
 
-#myQuiz {
+body{
+ background-image: url(../images/background.png);
+ background-repeat: repeat;
+ opacity:1;
+}
+
+
+  #myQuiz {
 	width: 650px;
 	height: 650px;
 	position: relative;
 	overflow: hidden;
 	color: $white;
 	background-color: $black;
+	margin:50px auto;
 	   h1{
 	   	font-weight: 100;
 	   	font-size: 2em;
@@ -17,7 +25,7 @@ $gold: #efbe5e;
 	   	margin:0px;
 	   	position:absolute;
 	   	top:25px;
-	   	left:36px;
+	   	left:110px;
 
 	   	   span{
 	   	   	 display: block;
@@ -32,7 +40,7 @@ $gold: #efbe5e;
 	   	margin: 0px;
 	   	font-weight: 100;
 	   }
-
+ 
 	   h2{
 	   	font-size: 2.4em; 
 	   	margin: 0px;
@@ -294,15 +302,18 @@ $gold: #efbe5e;
 			width: 320px;
 
 			.progress{
-				width: 300px;
+				width: 250px;
 				top:110px;
 				left:35px;
 
+
 				div{
-					width:25px;
+					width:300px;
 					height:25px;
 					margin-right:20px;
-				}
+					margin-bottom: 13px;
+	                				
+	  			}
 			}
 
 			.intro{

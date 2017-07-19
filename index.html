@@ -7,7 +7,8 @@
 </head>
 <body>
       <div id="myQuiz" ng-controller="quizController">
-         <h1>Test your knowledge: <span>Javascript</span></h1>
+
+       <h1>Test your knowledge: <span>Javascript</span></h1>
          
          <div class="progress">
             <div ng-repeat="myQuestion in myQuestions"
@@ -44,20 +45,24 @@
                ng-repeat="Answer in myQuestions[$index].answers">{{Answer.text}}</p>
              
               <div class="feedback">
-                 <p ng-show="myQuestion.correctness === 'correct'">You are <strong>correct !</strong></p>
+                 <p ng-show="myQuestion.correctness === 'correct'">You are <strong>correct !</strong>
+                {{ myQuestion.feedback }}
+                 </p>
                  <p ng-show="myQuestion.correctness === 'incorrect'">Sorry, wrong answer</strong></p>
-                 <p>{{ myQuestion.feedback }}</p>
+                
                  <div class="btn" ng-click="nextQuestion()">Continue</div>
               </div><!--feedback-->
          </div><!--question-->
          <div class="results 
           {{totalQuestions === activeQuestion ? 'active': 'inactive'}}
          ">
-            <h3>Results</h3>
-            <p>You scored {{percentage}}% by correctly answering 
+            <h3>Results
+                <br>
+            You scored {{percentage}}% by correctly answering 
                {{score}} of the total {{totalQuestions}} questions
-            </p>
-            <h3>{{message}}</h3>
+               <br>            
+            {{message}}
+            </h3>
             
          </div><!--results-->
       </div><!--myQuiz-->

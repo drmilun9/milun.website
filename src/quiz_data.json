@@ -1,43 +1,90 @@
 [
    {
-   	"question": "Saturn is the ________ planet from the Sun.",
+   	"question": "1. Inside which HTML element do we put the JavaScript?",
    	"answers" : [
-        {"id":0, "text": "Fourth"},
-        {"id":1, "text": "Sixth"}, 
-        {"id":2, "text": "Second"},
-        {"id":3, "text": "Eight"}
+        {"id":0, "text": "<scripting>"},
+        {"id":1, "text": "<javascript>"}, 
+        {"id":2, "text": "<js>"},
+        {"id":3, "text": "<script>"}
+
+   	],
+   	"correct":3,
+    "feedback":" Great just go head :)"
+   },
+     {
+   	"question": "2. Where is the correct place to insert a JavaScript?",
+   	"answers" : [
+        {"id":0, "text": "The <body> section"},
+        {"id":1, "text": "Both the <head> section and the <body> section are correct"}, 
+        {"id":2, "text": "The <head> section"}
+     
    	],
    	"correct":1
    },
      {
-   	"question": "Saturn is the ________ planet from the Sun.",
+   	"question": "3. What is the correct syntax for referring to an external script called 'xxx.js'?",
    	"answers" : [
-        {"id":0, "text": "Fourth"},
-        {"id":1, "text": "Sixth"}, 
-        {"id":2, "text": "Second"},
-        {"id":3, "text": "Eight"}
+        {"id":0, "text": "<script href='xxx.js'>"},
+        {"id":1, "text": " <script name='xxx.js>'"}, 
+        {"id":2, "text": "<script src='xxx.js'>"}
+
+      
    	],
    	"correct":2
+   	
    },
      {
-   	"question": "Saturn is the ________ planet from the Sun.",
+   	"question": "4. The external JavaScript file must contain the <script> tag.",
    	"answers" : [
-        {"id":0, "text": "Fourth"},
-        {"id":1, "text": "Sixth"}, 
-        {"id":2, "text": "Second"},
-        {"id":3, "text": "Eight"}
+        {"id":0, "text": "true"},
+        {"id":1, "text": "false"} 
+      
    	],
-   	"correct":3,
-   	"feedback":" Great just go head :)"
+   	"correct":1
    },
-     {
-   	"question": "Saturn is the ________ planet from the Sun.",
-   	"answers" : [
-        {"id":0, "text": "Fourth"},
-        {"id":1, "text": "Sixth"}, 
-        {"id":2, "text": "Second"},
-        {"id":3, "text": "Eight"}
-   	],
-   	"correct":4
+
+   {
+    "question": "5. How do you write 'Hello World' in an alert box?",
+    "answers" : [
+        {"id":0, "text": "msg('Hello World');"},
+        {"id":1, "text": "msgBox('Hello World');"}, 
+        {"id":2, "text": "alert('Hello World');"},
+        {"id":3, "text": "alertBox('Hello World');"}
+    ],
+    "correct":3
+   },
+
+   {
+    "question": "6. How to write an IF statement in JavaScript?",
+    "answers" : [
+        {"id":0, "text": "if i = 5"},
+        {"id":1, "text": "if (i == 5)"}, 
+        {"id":2, "text": "if i = 5 then"},
+        {"id":3, "text": "if i == 5 then"}
+    ],
+    "correct":1
+   },
+
+   {
+    "question": "7. How does a FOR loop start?",
+    "answers" : [
+        {"id":0, "text": "for (i <= 5; i++)"},
+        {"id":1, "text": "for (i = 0; i <= 5; i++)"}, 
+        {"id":2, "text": "for (i = 0; i <= 5)"},
+        {"id":3, "text": "for i = 1 to 5"}
+    ],
+    "correct":1
+   },
+
+
+   {
+    "question": "8. How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+    "answers" : [
+        {"id":0, "text": "if i <> 5"},
+        {"id":1, "text": "if i =! 5 then"}, 
+        {"id":2, "text": "if (i != 5)"},
+        {"id":3, "text": "if (i <> 5)"}
+    ],
+    "correct":2
    }
 ]

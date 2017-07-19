@@ -3,29 +3,23 @@ var gulp = require('gulp'),
  compass          = require('gulp-compass'),
  autoprefixer     = require('gulp-autoprefixer'),
  minifycss        = require('gulp-minify-css'),
-  //uglify           = require('gulp-uglify'),
  rename           = require('gulp-rename'),
 
 
-//var sass        = require('gulp-ruby-sass');
-
-    //jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload');
-   // del = require('del');
+  
 
 //styles
 gulp.task('sass', function() {
   return gulp.src(['src/sass/style.scss'])
-    //.pipe(plumber(plumberErrorHandler))
-    .pipe(compass({
+      .pipe(compass({
       css: 'dist/css',
-      sass: 'src/sass',
-      //image: 'html/images'
+      sass: 'src/sass'
     }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     //.pipe(gulp.dest('src/css'))
