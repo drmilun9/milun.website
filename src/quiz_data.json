@@ -51,7 +51,7 @@
         {"id":2, "text": "alert('Hello World');"},
         {"id":3, "text": "alertBox('Hello World');"}
     ],
-    "correct":3
+    "correct":2
    },
 
    {
